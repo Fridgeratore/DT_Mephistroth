@@ -55,7 +55,7 @@ local function ShowBigMessage(msg)
     DT_Mephistroth_BigMsg.text:SetTextColor(1, 0, 0) -- 确保每次都为红色
     DT_Mephistroth_BigMsg:Show()
     -- 8秒后自动隐藏
-    DT_Timer.After(11, function() DT_Mephistroth_BigMsg:Hide() end)
+    DT_Timer.After(8, function() DT_Mephistroth_BigMsg:Hide() end)
 end
 
 -- 检查玩家是否在移动
@@ -104,7 +104,7 @@ local function ReallyDisableWASD()
     SaveBindings(GetCurrentBindingSet())
 
     -- 8秒后自动恢复按键绑定
-    DT_Timer.After(9.5, RestoreWASD)
+    DT_Timer.After(11, RestoreWASD)
 end
 
 -- 禁用WASD及相关按键的函数
@@ -152,6 +152,7 @@ frame:SetScript("OnEvent", function()
     -- 处理事件
     OnChatMessage(event, arg1)
 end)
+
 
 
 
